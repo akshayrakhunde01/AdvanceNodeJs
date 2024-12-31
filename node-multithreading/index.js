@@ -9,7 +9,7 @@ app.get('/non-blocking',(req,res)=>{
 })
 
 app.get('/blocking',(req,res)=>{
-
+// worker thread
     const worker =new Worker('./worker.js');
     worker.on('message',(data)=>{
         res.status(200).send(` counter is ${data}`)
